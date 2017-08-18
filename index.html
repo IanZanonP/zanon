@@ -1,21 +1,93 @@
 <html>
-
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+ <head>
+  <title>Site</title>
   <style>
-  .pm {width: 100%;
-       height: 70%;}
+  header {margin-left: 20%;}
+  li {padding: 10px;}
+  ul {list-style: none;
+      margin-left: 5%;}
+  div.border {background-color: #FFFFFF;
+              margin-top: 3%;
+              border-style: inset;
+			  margin-left: 30%;
+			  margin-right: 30%;
+			  box-shadow: 3px 3px 3px gray;}
+  div.blue {background-color: #6A5AAA;
+              z-index: -1;
+			  top: 0px;
+			  padding: 100px;
+			  padding-right: 100%;
+			  margin-left; 100%;
+			  position: absolute;}
+  .submit {margin-left: 55%;}
   </style>
-</head>
-
-<body>
-<img class="img-responsive" src="http://imagizer.imageshack.us/a/img924/3023/Gzc0lg.png" width="1600">
-</body>
-
+ </head>
+  
+ <body>
+ <div class="border">
+  <header>
+   <h1>Cadastro</h1>
+  </header>
+   <div><form>
+    <ul> 
+     <li>Nome * <br/><input type="Text"/></li> 
+     <li>Contato * <br/><input type="Text"/></li> 
+     <li>Sexo: 
+      <br/> <input type="radio" name="sexo" value="Male" checked> Masculino 
+      <br/> <input type="radio" name="sexo" value="Female"> Feminino
+     </li>
+	      <li> 
+      Vem de onde? *<br/>
+      <select>
+	   <option value="Espirito Santo">Espirito Santo</option>
+	   <option value="Minas Gerais">Minas Gerais</option>
+	   <option value="Sao Paulo">Sao Paulo</option>
+	   <option value="Rio de Janeiro">Rio de Janeiro</option>
+	   <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+	   <option value="Santa Catarina">Santa Catarina</option>
+	   <option value="Pa rana">Parana</option>
+	   <option value="Mato Grosso">Mato Grosso</option>
+	   <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+	   <option value="Goias">Goias</option>
+	   <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+	   <option value="Maranhao">Maranhao</option>
+	   <option value="Alagoas">Alagoas</option>
+	   <option value="Joao Pessoa">Joao Pessoa</option>
+	   <option value="Sergipe">Sergipe</option>
+	   <option value="Pernambuco">Pernambuco</option>
+	   <option value="Bahia">Bahia</option>
+	   <option value="Fortaleza">Fortaleza</option>
+	   <option value="Piaui">Piaui</option>
+	   <option value="Ceara">Ceara</option>
+	   <option value="Acre">Acre</option>
+	   <option value="Amazonas">Amazonas</option>
+	   <option value="Rondonia">Rondonia</option>
+	   <option value="Roraima">Roraima</option>
+	   <option value="Amapa">Amapa</option>
+	   <option value="Tocantins">Tocantins</option>
+	   <option value="Para">Para</option>
+      </select>
+     </li>
+	 <li>
+      Sobre voce: *
+      <br/>
+      <textarea>
+      </textarea>
+	 </li>
+<li>E-mail: <input type="email"></li>
+<li>Cor favorita: <input type="color"></li>
+<li>Data de nascimento: <input type="date"></li>
+<li>Horário do nascimento: <input type="time"></li>
+<li>Conhecimentos:<br/>
+0% <input type="range" min="0" max="100"> 100% - Html<br/>
+0% <input type="range" min="0" max="100">100% - CSS<br/>
+0% <input type="range" min="0" max="100">100% - JavaScript</li>
+    <p class=submit><input class type="submit"/>
+    <input class type="reset"/></p>
+   </ul>
+  </form>
+  </div>
+  </div>
+  <div class=blue></div>
+ </body>
 </html>
