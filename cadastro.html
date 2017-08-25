@@ -35,14 +35,17 @@
   </header>
    <div><form>
     <ul> 
-     <li>Nome * <br/><input type="Text"/></li> 
-     <li>Contato * <br/><input type="Text"/></li> 
+     <li>Nome * <br/><input type="Text" value="Ian" size="10" readonly/></li> 
+     <li>Senha *<br/>
+     <input type="password" placeholder="Coloque sua senha aqui." maxlength="30" size="20" autofocus required/></li>
+     <li>Contato <br/><input type="Text" size="20" placeholder="Coloque seu contato aqui." disabled/></li> 
      <li>Sexo: 
       <br/> <input type="radio" name="sexo" value="Male" checked> Masculino 
       <br/> <input type="radio" name="sexo" value="Female"> Feminino
      </li>
 	      <li> 
       Vem de onde? *<br/>
+
       <select>
 	   <option value="Espirito Santo">Espirito Santo</option>
 	   <option value="Minas Gerais">Minas Gerais</option>
@@ -50,7 +53,7 @@
 	   <option value="Rio de Janeiro">Rio de Janeiro</option>
 	   <option value="Rio Grande do Sul">Rio Grande do Sul</option>
 	   <option value="Santa Catarina">Santa Catarina</option>
-	   <option value="Pa rana">Parana</option>
+	   <option value="Parana">Parana</option>
 	   <option value="Mato Grosso">Mato Grosso</option>
 	   <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
 	   <option value="Goias">Goias</option>
@@ -71,19 +74,35 @@
 	   <option value="Amapa">Amapa</option>
 	   <option value="Tocantins">Tocantins</option>
 	   <option value="Para">Para</option>
-      </select>
+       </select>
+     </li>
+     <li>Seu Browser:<br>
+     <input list="browsers" name="browser">
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+  <option value="Tor">
+</datalist>
      </li>
 	 <li>
-      Sobre voce: *
+      Sobre voce:
       <br/>
       <textarea>
       </textarea>
 	 </li>
-<li>E-mail: <input type="email"></li>
+     <li>Quais sao seus gostos:</li>
+     <li class="gosto"><input type="checkbox" value="Cafe"> Cafe</li>
+     <li class="gosto"><input type="checkbox" value="Chocolate"> Chocolate
+     </li>
+<li>E-mail: * <br/> <input type="email" size="20" placeholder="Informe seu e-mail aqui." required></li>
+<li>Telefone:<br/><input type="text" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$"> </li>
 <li>Cor favorita: <input type="color"></li>
-<li>Data de nascimento: <input type="date"></li>
+<li>Data de nascimento: * <input type="date"></li>
 <li>Horário do nascimento: <input type="time"></li>
-<li>Conhecimentos:<br/>
+<li>Conhecimentos: *<br/>
 0% <input type="range" min="0" max="100"> 100% - Html<br/>
 0% <input type="range" min="0" max="100">100% - CSS<br/>
 0% <input type="range" min="0" max="100">100% - JavaScript</li>
