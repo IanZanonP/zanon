@@ -26,91 +26,68 @@
   input {height: 30px;
          font-size: 18px;}
   </style>
+	 
+	 <script>
+  function verifica() {
+
+      
+      if ((aceita.checked) && (pwd.value == cpwd.value) && (pwd.value != ""))
+        {enviar.disabled = false;}
+      else
+        {enviar.disabled = true;
+    }
+    }
+     
+ function mostrarSenha() {
+ 		 if (mostrar.checked) 
+                 {pwd.type = "text";}
+        else {pwd.type = "password";}
+ }
+
+    
+    
+  </script>
  </head>
   
  <body>
  <div class="border">
-  <header>
-   <h1>Cadastro</h1>
-  </header>
-   <div><form>
-    <ul> 
-     <li>Nome * <br/><input type="Text" value="Ian" size="10" readonly/></li> 
-     <li>Senha *<br/>
-     <input type="password" placeholder="Coloque sua senha aqui." maxlength="30" size="20" autofocus required/></li>
-     <li>Contato <br/><input type="Text" size="20" placeholder="Coloque seu contato aqui." disabled/></li> 
-     <li>Sexo: 
-      <br/> <input type="radio" name="sexo" value="Male" checked> Masculino 
-      <br/> <input type="radio" name="sexo" value="Female"> Feminino
-     </li>
-	      <li> 
-      Vem de onde? *<br/>
-
-      <select>
-	   <option value="Espirito Santo">Espirito Santo</option>
-	   <option value="Minas Gerais">Minas Gerais</option>
-	   <option value="Sao Paulo">Sao Paulo</option>
-	   <option value="Rio de Janeiro">Rio de Janeiro</option>
-	   <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-	   <option value="Santa Catarina">Santa Catarina</option>
-	   <option value="Parana">Parana</option>
-	   <option value="Mato Grosso">Mato Grosso</option>
-	   <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-	   <option value="Goias">Goias</option>
-	   <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-	   <option value="Maranhao">Maranhao</option>
-	   <option value="Alagoas">Alagoas</option>
-	   <option value="Joao Pessoa">Joao Pessoa</option>
-	   <option value="Sergipe">Sergipe</option>
-	   <option value="Pernambuco">Pernambuco</option>
-	   <option value="Bahia">Bahia</option>
-	   <option value="Fortaleza">Fortaleza</option>
-	   <option value="Piaui">Piaui</option>
-	   <option value="Ceara">Ceara</option>
-	   <option value="Acre">Acre</option>
-	   <option value="Amazonas">Amazonas</option>
-	   <option value="Rondonia">Rondonia</option>
-	   <option value="Roraima">Roraima</option>
-	   <option value="Amapa">Amapa</option>
-	   <option value="Tocantins">Tocantins</option>
-	   <option value="Para">Para</option>
-       </select>
-     </li>
-     <li>Seu Browser:<br>
-     <input list="browsers" name="browser">
-<datalist id="browsers">
-  <option value="Internet Explorer">
-  <option value="Firefox">
-  <option value="Chrome">
-  <option value="Opera">
-  <option value="Safari">
-  <option value="Tor">
-</datalist>
-     </li>
-	 <li>
-      Sobre voce:
-      <br/>
-      <textarea>
-      </textarea>
-	 </li>
-     <li>Quais sao seus gostos:</li>
-     <li class="gosto"><input type="checkbox" value="Cafe"> Cafe</li>
-     <li class="gosto"><input type="checkbox" value="Chocolate"> Chocolate
-     </li>
-<li>E-mail: * <br/> <input type="email" size="20" placeholder="Informe seu e-mail aqui." required></li>
-<li>Telefone:<br/><input type="text" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$"> </li>
-<li>Cor favorita: <input type="color"></li>
-<li>Data de nascimento: * <input type="date"></li>
-<li>Horário do nascimento: <input type="time"></li>
-<li>Conhecimentos: *<br/>
-0% <input type="range" min="0" max="100"> 100% - Html<br/>
-0% <input type="range" min="0" max="100">100% - CSS<br/>
-0% <input type="range" min="0" max="100">100% - JavaScript</li>
-    <p class=submit><input class type="submit"/>
-    <input class type="reset"/></p>
-   </ul>
+  <div class="container">
+  <h2>Formulário de Cadastro</h2>
+  <form action="/auth/add" method="post">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" name="nome">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" onchange="verifica();" class="form-control" id="pwd" placeholder="Digite seu password" name="pwd">
+    </div>
+    <div class="form-group">
+      <label for="cpwd">Confirme sua Password:</label>
+      <input type="password" onchange="verifica();" class="form-control" id="cpwd" placeholder="Confirme sua password" name="cpwd">
+    </div>
+    <div class="checkbox">
+      <label for= "mostrar"><input type="checkbox" id="mostrar" onchange="mostrarSenha();">Mostrar Senha</label>
+    </div>
+    <div class="form-group">
+      <label for="gnr">Sexo:</label>
+      <label class="radio-inline">
+        <input type="radio" name="sexo" value="F" id="gnr">Feminino
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="sexo"  value="M" id="gnr">Masculino
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for= "aceita"><input type="checkbox" id="aceita" onchange="verifica();">Li e aceito os termos e condições</label>
+    </div>
+    <input type="submit" id="enviar" class="btn btn-default" value="Enviar" disabled/>
   </form>
-  </div>
+</div>
   </div>
   <div class=blue></div>
  </body>
