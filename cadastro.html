@@ -56,19 +56,21 @@
   <form action="/auth/add" method="post">
     <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" name="nome">
+      <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input type="text" class="form-control" id="nome" placeholder="Digite seu nome" name="nome"></div>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
+      <div class="input-group">
+      <span class="input-group-addon">E-mail:</span>  <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email"></div>
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" onchange="verifica();" class="form-control" id="pwd" placeholder="Digite seu password" name="pwd">
+      <label for="pwd">Password:</label><div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input type="password" onchange="verifica();" class="form-control" id="pwd" placeholder="Digite seu password" name="pwd"></div>
     </div>
     <div class="form-group">
       <label for="cpwd">Confirme sua Password:</label>
-      <input type="password" onchange="verifica();" class="form-control" id="cpwd" placeholder="Confirme sua password" name="cpwd">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input type="password" onchange="verifica();" class="form-control" id="cpwd" placeholder="Confirme sua password" name="cpwd"></div>
     </div>
     <div class="checkbox">
       <label for= "mostrar"><input type="checkbox" id="mostrar" onchange="mostrarSenha();">Mostrar Senha</label>
