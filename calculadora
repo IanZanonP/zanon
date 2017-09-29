@@ -36,21 +36,33 @@ button[id="igual"]:hover {background-color: #4169E1;}
 
  function addNum(n) {
   var visor = document.getElementById("visor");
-  var
+  var number = document.getElementById("number");
+    if (op.value = mais) {
+    number.value += n;}
+
+   if (visor.value == 0) {visor.value = n;
+                         number.value += n;}
   
-  if (visor.value == 0) {visor.value = n;}
-  
-  else {visor.value += n;}
-  }
+   else {visor.value += n;
+        number.value += n;}
+   }
  
  function apagar() {
  var visor = document.getElementById("visor");
+ var number = document.getElementById("number");
  visor.value = "0";
+ number.value = "0";
  }
  
  function operacao(op) {
  var visor = document.getElementById("visor");
  visor.value += op;
+ 
+ if (op == "+") {op.value = mais;}
+ }
+ 
+ function igual() {
+ document.getElementById("visor").value = document.getElementById("number").value;
  }
 </script>
 </head>
