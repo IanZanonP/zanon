@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {border: double;
+            text-align: center;
+            border-width: 3px;
+            border-radius: 5px;
+            margin-left: 40%;
+            margin-right: 40%;}
+
+input[type="Text"] {text-align: right;}
+           
+button {width: 25px}
+
+button:hover {background-color: #20B2AA;}
+
+button:clicked {background-color: #008B8B;}
+
+.espaco {padding-bottom: 3px;}
+
+button[id="igual"] {background-color: #4682B4;
+                color: white;
+                border-color: black;}
+                
+button[id="igual"]:hover {background-color: #4169E1;}
+                
+.num {background-color: #2F4F4F;
+      border-color: black;
+      color: white;}
+
+.operation {background-color: #98FB98;
+            border-color: black;}
+</style>
+<script>
+
+ function addNum(n) {
+  var visor = document.getElementById("visor");
+  var
+  
+  if (visor.value == 0) {visor.value = n;}
+  
+  else {visor.value += n;}
+  }
+ 
+ function apagar() {
+ var visor = document.getElementById("visor");
+ visor.value = "0";
+ }
+ 
+ function operacao(op) {
+ var visor = document.getElementById("visor");
+ visor.value += op;
+ }
+</script>
+</head>
+<body>
+
+<div class="container">
+<input type="text" id="visor" value="0" size="11" disabled>
+<br>
+<div class="espaco">
+<label for="1"><button id="1" onclick="addNum(1);" class="num" value="1">1</button></label>
+<label for="2"><button id="2" onclick="addNum(2);" class="num" value="2">2</button></label>
+<label for="3"><button id="3" onclick="addNum(3);" class="num" value="3">3</button></label>
+<label for="mais"><button id="mais" onclick="operacao('+');" class="operation" value="+">+</button></label>
+<br>
+<label for="4"><button id="4" onclick="addNum(4);" class="num" value="4">4</button></label>
+<label for="5"><button id="5" onclick="addNum(5);" class="num" value="5">5</button></label>
+<label for="6"><button id="6" onclick="addNum(6);" class="num" value="6">6</button></label>
+<label for="menos"><button id="menos" onclick="operacao('-');" class="operation" value="-">-</button></label>
+<br>
+<label for="7"><button id="7" onclick="addNum(7);" class="num" value="7">7</button></label>
+<label for="8"><button id="8" onclick="addNum(8);" class="num" value="8">8</button></label>
+<label for="9"><button id="9" onclick="addNum(9);" class="num" value="9">9</button></label>
+<label for="dividir"><button id="dividir" onclick="operacao('/');" class="operation" value="/">/</button></label>
+<br>
+<label for="c"><button id="c" onclick="apagar();" class="operation" value="c">c</button></label>
+<label for="0"><button id="0" onclick="addNum(0);" class="num" value="0">0</button></label>
+<label for="igual"><button id="igual" onclick="igual();" value="=">=</button></label>
+<label for="vzs"><button id="vzs" class="operation" onclick="operacao('*');"  value="*">*</button></label>
+<br>
+</div>
+</div>
+
+<label id="number" value="0"><label id="op" value=""></label></label>
+
+</body>
+</html>
