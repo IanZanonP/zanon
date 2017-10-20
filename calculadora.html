@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@ border-radius: 15px;
     background: #f2f2f2;;
     width: 300px;
     border-radius: 25px;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 input[type="Text"] {text-align: right;}
@@ -44,33 +45,37 @@ button[id="c"] {background-color: #4682B4;
                 color: white;
                 border-color: black;}
                 
-button[id="igual"]:hover {background-color: #4169E1;}
+button[id="igual"]:hover {background-color: #4169E1;
+                          }
 
-button[id="c"]:hover {background-color: #4169E1;}
+button[id="c"]:hover {background-color: #4169E1;
+                      text-align: center;}
 .num {background-color: #2F4F4F;
       border-color: black;
-      color: white;}
+      color: white;
+      text-align: center;}
 
 .visor {border: 2px solid #a1a1a1;
     background: #dddddd;
     border-radius: 1000px;}
 
 .operation {background-color: #98FB98;
-            border-color: black;}
+            border-color: black;
+            text-align: center;
+            color: gray;}
 body {background-color: #e8e8e8;}
 </style>
 <script>
  function addNum(n) {
   var visor = document.getElementById("visor");
-  var number = document.getElementById("number");
-    if (op.value = mais) { if number = 0
-    number.value += n;}
+  var resultado = 0;
+  var op = document.getElementById("op");
 
-   if (visor.value == 0) {visor.value = n;
-                         number.value += n;}
-  
-   else {visor.value += n;
-        number.value += n;}
+   if (visor.value == 0) {visor.value = n;}
+   else {visor.value += n;}
+   
+   if (op.value != "") {op.class = true;
+                        number.value = document.getElementById("number1").value}
    }
  
  function apagar() {
@@ -88,12 +93,13 @@ body {background-color: #e8e8e8;}
  }
  
  function igual() {
- document.getElementById("visor").value = document.getElementById("number").value;
+ document.getElementById("visor").value = document.getElementById("number2").value;
  }
 </script>
 </head>
 <body>
 <center>
+<h1>Calculadora</h1><br>
 <div class="jumbotron">
 <div class="container">
 <div class="breadcrump"><center>
@@ -124,7 +130,7 @@ body {background-color: #e8e8e8;}
 </div>
 </div>
 </center>
-<label id="number" value="0"><label id="op" value=""></label></label>
+<label id="number1" value="0"><label id="number2" value="5"><label id="op" value=""></label</label></label>
 
 </body>
 </html>
