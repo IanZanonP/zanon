@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .jogo {width: 50px;
+         height: 50px;
+         font-size: 35px;
+         text-align: center;
+         background-color: #008B8B;
+         border-color: black;
+         color: white;}
+  .jogo:hover {background-color: #20B2AA;}
+  
+  .jogo:active {background-color: #48D1CC;}
+  
+  .jogo:
+  </style>
+  <script>
+  function clica(id) {
+  document.getElementById(id).value = "X"}
+  </script>
+</head>
+<body>
+<input type="button" class="jogo" id="1" onclick="clica(1);">
+<input type="button" class="jogo" id="2" onclick="clica(2);">
+<input type="button" class="jogo" id="3" onclick="clica(3);"> <br>
+<input type="button" class="jogo" id="4" onclick="clica(4);">
+<input type="button" class="jogo" id="5" onclick="clica(5);">
+<input type="button" class="jogo" id="6" onclick="clica(6);"><br>
+<input type="button" class="jogo" id="7" onclick="clica(7);">
+<input type="button" class="jogo" id="8" onclick="clica(8);">
+<input type="button" class="jogo" id="9" onclick="clica(9);">
+
+<label id="jogador" value="1"></label>
+
+</body>
+</html>
