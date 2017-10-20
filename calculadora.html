@@ -1,13 +1,30 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-.container {border: double;
-            text-align: center;
-            border-width: 3px;
-            border-radius: 5px;
-            margin-left: 40%;
-            margin-right: 40%;}
+.breadcrumb{
+background-color: #e4e4e4;
+box-shadow: 0px 3px #c9c4c4;
+margin-top: -3%;
+border-radius: 15px;
+}
+.jumbotron{
+    text-align: center;
+	background-color: #f2f2f2;
+    border-style: radio;
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    background: #f2f2f2;;
+    width: 300px;
+    border-radius: 25px;
+    margin-top: 20%;
+}
 
 input[type="Text"] {text-align: right;}
            
@@ -22,22 +39,31 @@ button:clicked {background-color: #008B8B;}
 button[id="igual"] {background-color: #4682B4;
                 color: white;
                 border-color: black;}
+
+button[id="c"] {background-color: #4682B4;
+                color: white;
+                border-color: black;}
                 
 button[id="igual"]:hover {background-color: #4169E1;}
-                
+
+button[id="c"]:hover {background-color: #4169E1;}
 .num {background-color: #2F4F4F;
       border-color: black;
       color: white;}
 
+.visor {border: 2px solid #a1a1a1;
+    background: #dddddd;
+    border-radius: 1000px;}
+
 .operation {background-color: #98FB98;
             border-color: black;}
+body {background-color: #e8e8e8;}
 </style>
 <script>
-
  function addNum(n) {
   var visor = document.getElementById("visor");
   var number = document.getElementById("number");
-    if (op.value = mais) {
+    if (op.value = mais) { if number = 0
     number.value += n;}
 
    if (visor.value == 0) {visor.value = n;
@@ -67,34 +93,37 @@ button[id="igual"]:hover {background-color: #4169E1;}
 </script>
 </head>
 <body>
-
+<center>
+<div class="jumbotron">
 <div class="container">
-<input type="text" id="visor" value="0" size="11" disabled>
-<br>
+<div class="breadcrump"><center>
+<input type="text" class="visor form-control" id="visor" value="0" size="12" disabled></center>
+</div>
 <div class="espaco">
-<label for="1"><button id="1" onclick="addNum(1);" class="num" value="1">1</button></label>
-<label for="2"><button id="2" onclick="addNum(2);" class="num" value="2">2</button></label>
-<label for="3"><button id="3" onclick="addNum(3);" class="num" value="3">3</button></label>
-<label for="mais"><button id="mais" onclick="operacao('+');" class="operation" value="+">+</button></label>
+<label for="1"><button id="1" onclick="addNum(1);" class="btn btn-primary btn-lg num" value="1">1</button></label>
+<label for="2"><button id="2" onclick="addNum(2);" class="btn btn-primary btn-lg num" value="2">2</button></label>
+<label for="3"><button id="3" onclick="addNum(3);" class="btn btn-primary btn-lg num" value="3">3</button></label>
+<label for="mais"><button id="mais" onclick="operacao('+');" class="btn btn-primary btn-lg operation" value="+">+</button></label>
 <br>
-<label for="4"><button id="4" onclick="addNum(4);" class="num" value="4">4</button></label>
-<label for="5"><button id="5" onclick="addNum(5);" class="num" value="5">5</button></label>
-<label for="6"><button id="6" onclick="addNum(6);" class="num" value="6">6</button></label>
-<label for="menos"><button id="menos" onclick="operacao('-');" class="operation" value="-">-</button></label>
+<label for="4"><button id="4" onclick="addNum(4);" class="btn btn-primary btn-lg num" value="4">4</button></label>
+<label for="5"><button id="5" onclick="addNum(5);" class="btn btn-primary btn-lg num" value="5">5</button></label>
+<label for="6"><button id="6" onclick="addNum(6);" class="btn btn-primary btn-lg num" value="6">6</button></label>
+<label for="menos"><button id="menos" onclick="operacao('-');" class="btn btn-primary btn-lg operation" value="-">-</button></label>
 <br>
-<label for="7"><button id="7" onclick="addNum(7);" class="num" value="7">7</button></label>
-<label for="8"><button id="8" onclick="addNum(8);" class="num" value="8">8</button></label>
-<label for="9"><button id="9" onclick="addNum(9);" class="num" value="9">9</button></label>
-<label for="dividir"><button id="dividir" onclick="operacao('/');" class="operation" value="/">/</button></label>
+<label for="7"><button id="7" onclick="addNum(7);" class="btn btn-primary btn-lg num" value="7">7</button></label>
+<label for="8"><button id="8" onclick="addNum(8);" class="btn btn-primary btn-lg num" value="8">8</button></label>
+<label for="9"><button id="9" onclick="addNum(9);" class="btn btn-primary btn-lg num" value="9">9</button></label>
+<label for="dividir"><button id="dividir" onclick="operacao('/');" class="btn btn-primary btn-lg operation" value="/">/</button></label>
 <br>
-<label for="c"><button id="c" onclick="apagar();" class="operation" value="c">c</button></label>
-<label for="0"><button id="0" onclick="addNum(0);" class="num" value="0">0</button></label>
-<label for="igual"><button id="igual" onclick="igual();" value="=">=</button></label>
-<label for="vzs"><button id="vzs" class="operation" onclick="operacao('*');"  value="*">*</button></label>
+<label for="c"><button id="c" class="btn btn-primary btn-lg" onclick="apagar();" class="operation" value="c">c</button></label>
+<label for="0"><button id="0" onclick="addNum(0);" class="btn btn-primary btn-lg num" value="0">0</button></label>
+<label for="igual"><button id="igual" class="btn btn-primary btn-lg" onclick="igual();" value="=">=</button></label>
+<label for="vzs"><button id="vzs" class="btn btn-primary btn-lg operation" onclick="operacao('*');"  value="*">*</button></label>
 <br>
 </div>
 </div>
-
+</div>
+</center>
 <label id="number" value="0"><label id="op" value=""></label></label>
 
 </body>
