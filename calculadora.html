@@ -74,13 +74,16 @@ body {background-color: #e8e8e8;}
    if (visor.value == 0) {visor.value = n;}
    else {visor.value += n;}
    
-   if (op.value != "") {op.class = true;
+   if (op.value != "") {document.getElementById("optrue").value = 1;
                         number.value = document.getElementById("number1").value}
+   
+   if (optrue.value == 1) {
+   document.getElementById("valor").value = document.getElementById("number1").value + number.value}
    }
  
  function apagar() {
  var visor = document.getElementById("visor");
- var number = document.getElementById("number");
+ var number = document.getElementById("number1");
  visor.value = "0";
  number.value = "0";
  }
@@ -93,7 +96,7 @@ body {background-color: #e8e8e8;}
  }
  
  function igual() {
- document.getElementById("visor").value = document.getElementById("number2").value;
+ document.getElementById("visor").value = document.getElementById("valor").value;
  }
 </script>
 </head>
@@ -130,7 +133,7 @@ body {background-color: #e8e8e8;}
 </div>
 </div>
 </center>
-<label id="number1" value="0"><label id="number2" value="5"><label id="op" value=""></label</label></label>
+<label id="number1" value="0"><label id="valor" value=""><label id="optrue" value="0"><label id="op" value=""></label></label></label></label>
 
 </body>
 </html>
