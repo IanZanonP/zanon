@@ -6,37 +6,202 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   <style>
-  .jogo {width: 50px;
-         height: 50px;
-         font-size: 35px;
-         text-align: center;
-         background-color: #008B8B;
-         border-color: black;
-         color: white;}
-  .jogo:hover {background-color: #20B2AA;}
+  input[type=button].reset {padding: 20px;}
   
-  .jogo:active {background-color: #48D1CC;}
+  input[type=Text] {color: black;
+                    font-size: 15px;
+                    padding: 5px;}
   
-  .jogo:
+  input.btn-primary {height: 100px;
+         			 width: 100px;
+         			 font-size: 80px;
+         			 text-align: center;}
+  
+  
+  .velha {background-color: #337AB7;
+          margin-top: 10%;
+          padding: 10px;
+          width: 331.78px;
+          position: absoute;
+          border: 2px solid #a1a1a1;
+          border-radius: 25px;
+          color: #FFFFFF;}
+         
   </style>
+  
   <script>
-  function clica(id) {
-  document.getElementById(id).value = "X"}
+  var vez = 1;
+  var contadorx = 0;
+  var contadoro = 0;
+  
+  function aperta(n) { 
+    var n = document.getElementById(n);
+      var um = document.getElementById("1");
+  var dois = document.getElementById("2");
+  var tres = document.getElementById("3");
+  var quatro = document.getElementById("4");
+  var cinco = document.getElementById("5");
+  var seis = document.getElementById("6");
+  var sete = document.getElementById("7");
+  var oito = document.getElementById("8");
+  var nove = document.getElementById("9");
+  	if ((n.value != "O") && (n.value !="X")) {
+  		if (vez == 1) {
+  			n.value = "X";
+            document.getElementById("O").disabled = false;
+            document.getElementById("X").disabled = true;
+  			vez = 2;}
+  		else {
+  			n.value = "O"
+            document.getElementById("X").disabled = false;
+            document.getElementById("O").disabled = true;
+  			vez = 1;}
+ 	 }
+    if (((um.value == "O")||(um.value == "X"))&&((dois.value == "O")||(dois.value == "X"))&&((tres.value == "O")||(tres.value == "X"))&&((quatro.value == "O")||(quatro.value == "X"))&&((cinco.value == "O")||(cinco.value == "X"))&&((seis.value == "O")||(seis.value == "X"))&&((sete.value == "O")||(sete.value == "X"))&&((oito.value == "O")||(oito.value == "X"))&&((nove.value == "O")||(nove.value == "X"))) {
+  
+  reset();} 
+  
+     if ((um.value == "X") && (dois.value == "X") && (tres.value == "X")) {
+  reset();
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  }
+     if ((quatro.value == "X") && (cinco.value == "X") && (seis.value == "X")) {
+ contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+     if ((sete.value == "X") && (oito.value == "X") && (nove.value == "X")) {
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+     if ((um.value == "X") && (quatro.value == "X") && (sete.value == "X")) {
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+     if ((dois.value == "X") && (cinco.value == "X") && (oito.value == "X")) {
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+     if ((tres.value == "X") && (seis.value == "X") && (nove.value == "X")) {
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+     if ((um.value == "X") && (cinco.value == "X") && (nove.value == "X")) {
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+     if ((tres.value == "X") && (cinco.value == "X") && (sete.value == "X")) {
+  contadorx += 1;
+  document.getElementById("Xpoint").value = contadorx;
+  reset();
+  }
+  
+  
+  
+  
+  if ((um.value == "O") && (dois.value == "O") && (tres.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((quatro.value == "O") && (cinco.value == "O") && (seis.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((sete.value == "O") && (oito.value == "O") && (nove.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((um.value == "O") && (quatro.value == "O") && (sete.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((dois.value == "O") && (cinco.value == "O") && (oito.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((tres.value == "O") && (seis.value == "O") && (nove.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((um.value == "O") && (cinco.value == "O") && (nove.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+     if ((tres.value == "O") && (cinco.value == "O") && (sete.value == "O")) {
+  contadoro += 1;
+  document.getElementById("Opoint").value = contadoro;
+  reset();
+  }
+  }
+  
+  
+  function reset() {
+       var um = document.getElementById("1");
+  var dois = document.getElementById("2");
+  var tres = document.getElementById("3");
+  var quatro = document.getElementById("4");
+  var cinco = document.getElementById("5");
+  var seis = document.getElementById("6");
+  var sete = document.getElementById("7");
+  var oito = document.getElementById("8");
+  var nove = document.getElementById("9");
+  
+  um.value = "";
+  dois.value = "";
+  tres.value = "";
+  quatro.value = "";
+  cinco.value = "";
+  seis.value = "";
+  sete.value = "";
+  oito.value = "";
+  nove.value = "";
+  }
+  
   </script>
+  
 </head>
 <body>
-<input type="button" class="jogo" id="1" onclick="clica(1);">
-<input type="button" class="jogo" id="2" onclick="clica(2);">
-<input type="button" class="jogo" id="3" onclick="clica(3);"> <br>
-<input type="button" class="jogo" id="4" onclick="clica(4);">
-<input type="button" class="jogo" id="5" onclick="clica(5);">
-<input type="button" class="jogo" id="6" onclick="clica(6);"><br>
-<input type="button" class="jogo" id="7" onclick="clica(7);">
-<input type="button" class="jogo" id="8" onclick="clica(8);">
-<input type="button" class="jogo" id="9" onclick="clica(9);">
+<center>
+<div class="velha">
+<center><h1>Jogo da Velha</h1></center>
+<input type="button" value="" onclick="aperta(1);" class="btn btn-primary" id="1">
+<input type="button" value="" onclick="aperta(2);" class="btn btn-primary" id="2">
+<input type="button" value="" onclick="aperta(3);" class="btn btn-primary" id="3"><br>
+<input type="button" value="" onclick="aperta(4);" class="btn btn-primary" id="4">
+<input type="button" value="" onclick="aperta(5);" class="btn btn-primary" id="5">
+<input type="button" value="" onclick="aperta(6);" class="btn btn-primary" id="6"><br>
+<input type="button" value="" onclick="aperta(7);" class="btn btn-primary" id="7">
+<input type="button" value="" onclick="aperta(8);" class="btn btn-primary" id="8">
+<input type="button" value="" onclick="aperta(9);" class="btn btn-primary" id="9"><br>
 
-<label id="jogador" value="1"></label>
+<label class="x">
+<input type="text" id="Xpoint" size="1px;" value="0" class="btn" disabled>
+<input type="button" id="X" value="X" class="btn btn-danger">
+</label>
+
+<input type="button" value="Reset" class="btn btn-success reset" id="reset" onclick="reset();">
+
+<label class="y">
+<input type="button" id="O" value="O" class="btn btn-danger" disabled>
+<input type="text" id="Opoint" size="1px;" value="0" class="btn" disabled>
+</label>
+</div>
+</center>
 
 </body>
 </html>
